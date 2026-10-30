@@ -38,7 +38,7 @@ STM32F103_RTOS_AHT20/
 ├── .gitignore                      ← 已排除 Keil 编译产物与 60 MB 用不到的 CMSIS DSP
 ├── THIRD_PARTY_NOTICES.md          ← 第三方代码许可（uC/OS-III 是 Apache-2.0）
 ├── LICENSES/Apache-2.0.txt
-├── 01_Project/
+└── 01_Project/
 │   ├── AHT20_RTOS/                 ← 工程① 无内核版
 │   │   ├── AHT20_RTOS.ioc           CubeMX 工程文件（USART1 / I2C1 / PC13 / PB12）
 │   │   ├── Inc/  Src/               应用层代码（下面是各文件分工）
@@ -47,7 +47,6 @@ STM32F103_RTOS_AHT20/
 │   └── AHT20_uCOS3/                ← 工程② uC/OS-III 版
 │       ├── RTOS/                    uC-OS3 V3.08.02 + uC-CPU + uC-LIB（保持官方目录层级）
 │       └── MDK-ARM/AHT20_uCOS3.uvprojx
-└── 02_Docs/                        ← 7 篇中文文档 + 接线图 + 生成脚本
 ```
 
 应用层文件分工（两个工程基本一致）：
@@ -74,8 +73,7 @@ git clone https://github.com/<你的用户名>/<仓库名>.git
 3. `F8` 下载（CMSIS-DAP + STM32F10x Med-density Flash，勾 Reset and Run）
 4. 串口助手：**115200 / 8N1 / UTF-8**
 
-接线只要 4 类（详见 [`02_Docs/images/wiring.png`](02_Docs/images/wiring.png) 与
-[`02_Docs/images/wiring_task1.png`](02_Docs/images/wiring_task1.png)）：
+接线只要 4 类：
 
 | 外设 | 接到 | 说明 |
 | --- | --- | --- |
@@ -98,20 +96,7 @@ git clone https://github.com/<你的用户名>/<仓库名>.git
 hello uc/OS! 欢迎来到RTOS多任务环境！
 ```
 
-## 4. 文档
-
-| 文档 | 内容 | 对应作业 |
-| --- | --- | --- |
-| [01_任务二_完整教程.md](02_Docs/01_任务二_完整教程.md) | 从零到出数据的全部步骤、代码讲解、验证与排错 | 任务二整体 |
-| [02_软件I2C与硬件I2C.md](02_Docs/02_软件I2C与硬件I2C.md) | 两种 I2C 的原理、实现、优缺点对比 | 任务二第 1 小问 |
-| [03_AHT20数据手册解读.md](02_Docs/03_AHT20数据手册解读.md) | 手册里的命令、时序、数据格式、CRC、换算 | 任务二第 2 小问 |
-| [04_与任务一对接_uCOS-III.md](02_Docs/04_与任务一对接_uCOS-III.md) | 任务壳如何换成真正的 uC/OS-III | 任务二第 3 小问 |
-| [05_博客稿_CSDN版.md](02_Docs/05_博客稿_CSDN版.md) | 任务二单篇博客稿 | 写博客 |
-| [06_任务一_uCOS-III移植全记录.md](02_Docs/06_任务一_uCOS-III移植全记录.md) | 从官方仓库拿源码到 3 个任务跑起来的**完整移植过程**（含 4 个真实报错与修复） | 任务一 |
-| [07_博客_任务一与任务二.md](02_Docs/07_博客_任务一与任务二.md) | 两个任务合并成一篇博客（留了 20 个截图位） | 交作业 / 发 CSDN |
-| [08_上传到GitHub.md](02_Docs/08_上传到GitHub.md) | 本仓库怎么推到 GitHub（含代理与常见报错） | 存档 |
-
-## 5. 环境
+## 4. 环境
 
 | 项 | 版本 |
 | --- | --- |
@@ -121,7 +106,7 @@ hello uc/OS! 欢迎来到RTOS多任务环境！
 | 目标板 | STM32F103C8T6 最小系统板（Blue Pill），20 KB RAM / 64 KB Flash |
 | 下载器 | DAPLink / ST-Link（SWD：SWDIO-PA13、SWCLK-PA14、GND） |
 
-## 6. 许可
+## 5. 许可
 
 应用层代码为课程实验代码，可自由参考。
 `RTOS/` 下的 uC/OS-III、uC/CPU、uC/LIB 以及 CMSIS 为 **Apache-2.0**，
