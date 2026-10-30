@@ -1,0 +1,16 @@
+# 统一换行符：仓库里一律存 LF，Windows 检出也不会被改成 CRLF
+* text=auto eol=lf
+
+# Windows batch files must stay CRLF, else cmd.exe mis-parses them
+*.bat  text eol=crlf
+
+# 这些是二进制，别做任何转换
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.pdf  binary
+*.lib  binary
+*.a    binary
+*.hex  binary
+*.axf  binary
+*.bin  binary

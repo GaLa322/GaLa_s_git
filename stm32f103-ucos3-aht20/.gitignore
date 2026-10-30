@@ -1,0 +1,63 @@
+# ============================================================
+#  STM32F103 uC/OS-III + AHT20 —— Git 忽略规则
+#  原则：只提交"能重新编译出固件"的东西（源码、工程文件、文档），
+#        不提交任何编译产物、IDE 缓存、个人窗口布局。
+# ============================================================
+
+# ---------- Keil MDK 编译输出目录（两个工程各一个） ----------
+**/MDK-ARM/AHT20_RTOS/
+**/MDK-ARM/AHT20_uCOS3/
+
+# ---------- Keil / ARM 编译器中间文件（散落在各处时的兜底） ----------
+*.o
+*.d
+*.crf
+*.axf
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.lnp
+*.sct
+*.iex
+*.dep
+*.i
+*.__i
+*.htm
+*.build_log.htm
+*.bak
+*.uvguix.*
+*_uvprojx.bak
+JLinkLog.txt
+JLinkSettings.ini
+
+# ---------- 命令行编译/反汇编产生的临时日志 ----------
+build*.log
+rebuild*.log
+build_*.log
+dis*.txt
+*.log
+
+# ---------- CMSIS 里与本工程无关的大体量内容（约 60 MB） ----------
+# 本工程只用到：Drivers/CMSIS/Include、Drivers/CMSIS/Device/ST/STM32F1xx/Include
+**/Drivers/CMSIS/DSP/
+**/Drivers/CMSIS/Lib/
+**/Drivers/CMSIS/NN/
+**/Drivers/CMSIS/RTOS/
+**/Drivers/CMSIS/RTOS2/
+**/Drivers/CMSIS/Core_A/
+**/Drivers/CMSIS/Documentation/
+**/Drivers/CMSIS/PDSC/
+**/Drivers/CMSIS/*.pdsc
+**/Drivers/CMSIS/Doxyfile*
+**/*.lib
+**/*.a
+
+# ---------- 其它工程可能有的 IDE / 系统垃圾 ----------
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+~$*
